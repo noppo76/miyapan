@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>パン工房 | みやぱん</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <ul class="header__nav">
+          <li><a href="#about">みやぱんについて</a></li>
+          <li><a href="#policy">こだわり</a></li>
+          <li><a href="#menu">メニュー</a></li>
+        </ul>
+      </nav>
+      <div class="header__item">
+        <img src="./img/logo-02.png" alt="みやぱん" class="header__logo" />
+        <h2 class="header__text">
+          まいにち食べるパンだから、<span>身体によい素材を。</span>
+        </h2>
+      </div>
+    </header>
+
+    <section class="news">
+      <h2 class="news__ttl">お知らせ</h2>
+      <ul class="news__text">
+        <li><span class="news__day">2020/01/07</span>パンまつりのお知らせ</li>
+        <li><span class="news__day">2019/12/20</span>年末営業のお知らせ</li>
+        <li><span class="news__day">2019/10/10</span>新商品のお知らせ</li>
+      </ul>
+    </section>
+
+    <button class="page__top">
+      <span class="page__top_line"></span>
+    </button>
+
+    <article class="about js_fadein" id="about">
+      <img src="./img/logo-01.png" alt="みやぱん" class="about__logo" />
+      <div class="about__container">
+        <h2 class="about__ttl">みやぱんについて</h2>
+        <span class="about__text">
+          <p>
+            宮崎で農家もやってるパン屋だからこそ安心できる、<br />
+            暖かい気持ちになるパンを作りたい。<br />
+            できる限り素材のままを使って美味さを伝えたい。<br />
+            野菜がいっぱい食べれるパンです。<br />
+          </p>
+        </span>
+      </div>
+    </article>
+
+    <section class="policy js_fadein" id="policy">
+      <div class="policy__text">
+        <p class="policy__text-size_l">
+          パンがすき<br />
+          美味しいパンを作りたい<br />
+          大切な人に食べてもらいたい
+        </p>
+        <p class="policy__text-size_m">
+          納得のいく材料で、手間と時間を充分にかけ<br />
+          素材のもつ美味しさを最大限に引き出す努力をします。<br />
+          『愛と感謝』の思いを『パン』という形にかえて届けます。<br />
+          心を込めて作り上げたパンをぜひ、ご賞味ください。
+        </p>
+      </div>
+    </section>
+
+    <section class="menu js_fadein" id="menu">
+      <h2 class="menu__ttl">メニュー</h2>
+      <div class="menu__contents">
+        <div class="menu__item">
+          <span class="menu__item_img plan"></span>
+          <p class="menu__item_name">自家製小麦の食パン</p>
+          <p class="menu__value">１斤　¥880</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img croissant"></span>
+          <p class="menu__item_name">コロクロワッサン</p>
+          <p class="menu__value">５個入り　¥385</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img sidedish"></span>
+          <p class="menu__item_name">新鮮野菜の惣菜パン</p>
+          <p class="menu__value">¥220</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img anpan"></span>
+          <p class="menu__item_name">懐かしのあんぱん</p>
+          <p class="menu__value">¥110</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img germ"></span>
+          <p class="menu__item_name">胚芽ロール</p>
+          <p class="menu__value">¥110</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img bagel"></span>
+          <p class="menu__item_name">自家製ベーグル</p>
+          <p class="menu__value">¥165</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img lunch"></span>
+          <p class="menu__item_name">日替わりパン</p>
+          <p class="menu__value">¥165</p>
+        </div>
+        <div class="menu__item">
+          <span class="menu__item_img season"></span>
+          <p class="menu__item_name">Xmasドーナツ</p>
+          <p class="menu__value">¥165</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="phot">
+      <div class="phot__item"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__wrap">
+        <div class="footer__ttl">
+          <p class="footer__ttl-size_s">パン工房</p>
+          <p class="footer__ttl-size_m">みやぱん</p>
+        </div>
+        <div class="footer__add">
+          <address>
+            〒880-0879<br />
+            宮崎県宮崎市宮崎駅東3-7-1<br />
+            TEL 0985-55-0963
+          </address>
+          <table class="footer__shop_info">
+            <tr>
+              <th>営業時間</th>
+              <td>8:00〜17:00</td>
+            </tr>
+            <tr>
+              <th>駐車場</th>
+              <td>5台</td>
+            </tr>
+          </table>
+        </div>
+        <div class="footer__icon">
+          <a href="#"
+            ><img src="./img/facebook-icon.svg" alt="フェイスブック"
+          /></a>
+          <a href="#"> <img src="./img/twitter-icon.svg" alt="ツイッター" /></a>
+          <a href="#"> <img src="./img/instagram-icon.svg" alt="インスタ" /></a>
+        </div>
+      </div>
+    </footer>
+    <p class="copy">&copy;みやぱん</p>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>

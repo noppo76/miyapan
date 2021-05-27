@@ -1,0 +1,539 @@
+@import "mixin.scss";
+
+$base-color: #fff;
+$text-color: #333;
+$font-family: "TsukuARdGothic-Regular", YuGothic, "Yu Gothic", sans-serif;
+
+////////////////////////////// * base
+
+body {
+  font-size: 62.5%;
+}
+
+h2 {
+  font-family: $font-family;
+  @include fontSize(20);
+  @media screen and (max-width: 559px) {
+    @include fontSize(30);
+  }
+}
+
+p,
+a,
+li,
+.news__day {
+  font-family: $font-family;
+  text-decoration: none;
+  list-style: none;
+  color: $text-color;
+  @include fontSize(13);
+  @media screen and (max-width: 559px) {
+    @include fontSize(15);
+  }
+}
+
+td,
+th,
+address {
+  font-family: $font-family;
+  font-style: normal;
+  color: $base-color;
+  @include fontSize(11);
+  @media screen and (max-width: 559px) {
+    @include fontSize(13);
+  }
+}
+
+.news__ttl,
+.about__ttl,
+.menu__ttl {
+  @include fontSize(20);
+  font-weight: bold;
+  @media screen and (max-width: 559px) {
+    @include fontSize(30);
+  }
+}
+.copy {
+  color: $base-color;
+  font-size: 13px;
+  text-align: center;
+  background: #000;
+}
+
+////////////////////////////// * js
+
+.js_fadein {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+.fadein {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+////////////////////////////// * header
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background: url(./img/mv-100.jpg) no-repeat center;
+  position: relative;
+  background-size: cover;
+  border-radius: 0 0 50px 50px;
+  top: 0;
+
+  @media screen and (max-width: 559px) {
+    width: 100%;
+    height: 80vh;
+    border-radius: 0 0 30% 30%;
+  }
+
+  &__nav {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    @media screen and (max-width: 559px) {
+      width: 50%;
+    }
+
+    a {
+      display: inline-block;
+      color: $base-color;
+      font-weight: bold;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        transition: 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__logo {
+    width: 250px;
+  }
+
+  &__text {
+    color: $base-color;
+    font-weight: bold;
+    @include fontSize(20);
+    margin-top: 3%;
+
+    @media screen and (max-width: 559px) {
+      @include fontSize(30);
+      > span {
+        display: block;
+      }
+    }
+  }
+}
+
+////////////////////////////// * page top
+
+.page__top {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2px solid $text-color;
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  z-index: 100;
+
+  &_line {
+    display: block;
+    width: 20px;
+    height: 4px;
+    background: $text-color;
+    border-radius: 50px;
+    transform: rotate(50deg);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 4px;
+      background: $text-color;
+      border-radius: 50px;
+      transform: rotate(-100deg);
+      position: absolute;
+      top: 9px;
+      right: 8px;
+    }
+  }
+}
+
+////////////////////////////// * news
+
+.news {
+  @include widthSize(500);
+  @include heigthSize(170);
+  background: #fff;
+  border-radius: 100px;
+  position: relative;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media screen and (max-width: 559px) {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: -55px;
+    left: 50%;
+  }
+
+  &__ttl {
+    writing-mode: vertical-rl;
+
+    @media screen and (max-width: 559px) {
+      writing-mode: horizontal-tb;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @media screen and (max-width: 559px) {
+      width: max-content;
+      margin: 0 auto;
+    }
+  }
+
+  &__day {
+    margin-right: 25px;
+  }
+}
+
+////////////////////////////// * about
+.about {
+  width: 70%;
+  margin: 0 auto 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media screen and (max-width: 559px) {
+    width: 90%;
+  }
+
+  &__container {
+    width: 80%;
+  }
+
+  &__logo {
+    width: 35%;
+    height: 38%;
+    margin: 0 5% 0 10%;
+  }
+
+  &__ttl {
+    display: block;
+    width: max-content;
+    margin: 15px 0;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    border-left: 10px solid $text-color;
+  }
+
+  &__text {
+    display: inline-block;
+    line-height: 2;
+  }
+}
+////////////////////////////// * policy
+.policy {
+  width: 100%;
+  height: 70vh;
+  background: url(./img/ph24@2x.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+  @media screen and (max-width: 559px) {
+    height: 60vh;
+    background-size: cover;
+  }
+
+  &__text {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    @media screen and (max-width: 559px) {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 5%;
+    }
+
+    &-size_l {
+      font-size: 30px;
+      line-height: 1.8;
+      font-weight: bold;
+      margin-bottom: 45px;
+      text-shadow: #fff 1px 1px 3px;
+      @media screen and (max-width: 559px) {
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: 0;
+        text-shadow: none;
+      }
+    }
+
+    &-size_m {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+      line-height: 2;
+      @media screen and (max-width: 559px) {
+        background: none;
+      }
+    }
+  }
+}
+////////////////////////////// * menu
+
+.menu {
+  width: 90%;
+  margin: 10% auto;
+
+  &__ttl {
+    display: block;
+    width: max-content;
+    margin: 0 auto 70px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    border-left: 10px solid $text-color;
+  }
+
+  &__contents {
+    display: grid;
+    justify-content: center;
+    gap: 15px;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 55% 55%;
+  }
+
+  &__item {
+    margin: 0 auto;
+    text-align: center;
+
+    &:first-child {
+      position: relative;
+
+      &::after {
+        content: "人気\ANo.1";
+        font-size: 17px;
+        color: #fff;
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 9px;
+        line-height: 1;
+        font-family: $font-family;
+        width: 55px;
+        height: 55px;
+        background: rgb(241, 133, 9);
+        transform: rotate(-20deg);
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @media screen and (max-width: 559px) {
+          width: 40px;
+          height: 40px;
+          font-size: 13px;
+          top: -10px;
+          left: -10px;
+          padding-top: 6px;
+        }
+      }
+    }
+
+    &:last-child {
+      position: relative;
+
+      &::after {
+        content: "季節\A限定";
+        font-size: 17px;
+        color: #fff;
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 9px;
+        line-height: 1;
+        font-family: $font-family;
+        width: 55px;
+        height: 55px;
+        background: rgb(223, 5, 175);
+        transform: rotate(-20deg);
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @media screen and (max-width: 559px) {
+          width: 40px;
+          height: 40px;
+          font-size: 13px;
+          top: -10px;
+          left: -10px;
+          padding-top: 6px;
+        }
+      }
+    }
+
+    &_img {
+      @include menuItem;
+    }
+
+    &_name {
+      font-weight: bold;
+    }
+  }
+}
+.plan {
+  background: url(./img/plain-bread.jpg) no-repeat center;
+  background-size: cover;
+}
+.croissant {
+  background: url(./img/croissant.jpg) no-repeat center;
+  background-size: cover;
+}
+.sidedish {
+  background: url(./img/sidedish-bread.jpg) no-repeat center;
+  background-size: cover;
+}
+.anpan {
+  background: url(./img/an-pan.jpg) no-repeat center;
+  background-size: cover;
+}
+.germ {
+  background: url(./img/germ-roll.jpg) no-repeat center;
+  background-size: cover;
+}
+.bagel {
+  background: url(./img/bagel.jpg) no-repeat center;
+  background-size: cover;
+}
+.lunch {
+  background: url(./img/lunch.jpg) no-repeat center;
+  background-size: cover;
+}
+.season {
+  background: url(./img/xmas-donut.jpg) no-repeat center;
+  background-size: cover;
+}
+
+////////////////////////////// * phot
+
+.phot {
+  width: 100%;
+  @include heigthSize(250);
+
+  @media screen and(max-width:559px) {
+    @include heigthSize(500);
+  }
+
+  > div {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    background: url(./img/phot.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 100px;
+  }
+}
+
+////////////////////////////// * footer
+
+.footer {
+  width: 100%;
+  height: calc(300px - 13px);
+  background: #000;
+
+  &__wrap {
+    width: 50%;
+    margin: 0 auto;
+    @media screen and(max-width:559px) {
+      width: 100%;
+    }
+  }
+
+  &__ttl {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: $base-color;
+    padding: 30px 0 10px;
+
+    &-size_s {
+      font-size: 18px;
+      color: $base-color;
+      padding: 0px 15px 6px;
+      @media screen and(max-width:559px) {
+        font-size: 14px;
+      }
+    }
+    &-size_m {
+      font-size: 30px;
+      color: $base-color;
+      @media screen and(max-width:559px) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &__add {
+    display: flex;
+    justify-content: center;
+    line-height: 2;
+    margin: 10px auto;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    img {
+      width: 40px;
+    }
+    a {
+      margin: 0 10px;
+    }
+  }
+
+  &__shop_info {
+    margin-left: 20px;
+    text-align: left;
+  }
+}

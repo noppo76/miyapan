@@ -1,0 +1,36 @@
+@mixin menuItem {
+  display: block;
+  @include widthSize(150);
+  @include heigthSize(150);
+  border-radius: 100%;
+  // width: 200px;
+  // height: 200px;
+  // margin-bottom: 20px;
+}
+
+@mixin menuItemRes {
+  @include widthSize(150);
+  @include heigthSize(150);
+  display: block;
+  border-radius: 100%;
+  // width: 150px;
+  // height: 150px;
+  // margin-bottom: 15px;
+}
+
+@function wSize($size) {
+  $rate: 100 / 1000;
+  @return $rate * $size * 1vw;
+}
+
+@mixin widthSize($size) {
+  width: wSize($size);
+}
+
+@mixin heigthSize($size) {
+  height: wSize($size);
+}
+
+@mixin fontSize($size) {
+  font-size: wSize($size);
+}
