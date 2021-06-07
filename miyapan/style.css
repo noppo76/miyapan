@@ -157,6 +157,9 @@ address {
 }
 
 .header__text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   color: #fff;
   font-weight: bold;
   font-size: 30px;
@@ -578,6 +581,13 @@ address {
   background-size: cover;
   background-attachment: fixed;
   margin-bottom: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .phot__item {
+    background-size: cover;
+    background-attachment: scroll;
+  }
 }
 
 .footer {

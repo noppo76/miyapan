@@ -137,6 +137,7 @@ address {
   }
 
   &__text {
+    width: max-content;
     color: $base-color;
     font-weight: bold;
     font-size: 30px;
@@ -487,6 +488,10 @@ address {
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 100px;
+    @media screen and(max-width: 600px) {
+      background-size: cover;
+      background-attachment: scroll;
+    }
   }
 }
 
