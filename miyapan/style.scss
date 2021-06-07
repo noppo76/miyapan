@@ -489,7 +489,7 @@ address {
     background-attachment: fixed;
     margin-bottom: 100px;
     @media screen and(max-width: 600px) {
-      background-size: cover;
+      object-fit: 100%;
       background-attachment: scroll;
     }
   }
